@@ -3,35 +3,54 @@
 {% block content %}
     <div class="container mt-4">
         <h1 class="mb-3">Kết quả tìm kiếm cho "{{ search_query }}"</h1>
-
-        {% if results %}
-            <div class="row">
-                {% for entry in results %}
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img src="{{ entry.image }}" class="card-img-top" alt="{{ entry.english }}">
-                            <div class="card-body">
-                                <h5 class="card-title">Từ tiếng Anh: {{ entry.english }}</h5>
-                                <p class="card-text">Nghĩa tiếng Việt: {{ entry.vietnam }}</p>
+<!-- ... -->
+{% if results %}
+    <div class="row">
+        {% for result_type, entry in results %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{{ entry.image }}" class="card-img-top" alt="{{ entry.english }}">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            {% if result_type == 'dictionary' %}
+                                Từ tiếng Anh: {{ entry.english }}
+                                <br>
+                                Nghĩa tiếng Việt: {{ entry.vietnam }}
+                                <br>
+                                Loại từ: {{entry.category}}
                                 <div class="audio-player">
                                     <span id="play-button" class="play-button">
-                                        <i class="fas fa-search"></i>
+                                        <i class="fas fa-volume-up"></i>
                                     </span>
                                     <audio id="audio-player" controls style="display: none;">
                                         <source src="{{ entry.pronounce }}" type="audio/mpeg">
                                         Your browser does not support the audio element.
                                     </audio>
                                 </div>
-                            </div>
-                        </div>
+                            {% elif result_type == 'conversation' %}
+                            Hội thoại
+                            {% endif %}
+                        </h5>
+                        <p class="card-text">
+                            {% if result_type == 'conversation' %}
+                                {% if entry.enconversation %}
+                                    Tiếng Anh: {{ entry.enconversation }}
+                                {% endif %}
+                                {% if entry.vnconversation %}
+                                    Tiếng Việt: {{ entry.vnconversation }}
+                                {% endif %}
+                            {% endif %}
+                        </p>
                     </div>
-                {% endfor %}
+                </div>
             </div>
-        {% else %}
-            <p>Không tìm thấy kết quả.</p>
-        {% endif %}
+        {% endfor %}
     </div>
-
+{% else %}
+    <p>Không tìm thấy kết quả.</p>
+{% endif %}
+<!-- ... -->
+    </div>
     <script>
         const playButton = document.getElementById('play-button');
         const audioPlayer = document.getElementById('audio-player');
