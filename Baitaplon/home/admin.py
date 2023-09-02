@@ -14,3 +14,4 @@ class DictionaryEntryAdmin(admin.ModelAdmin):
 class ConversationAdmin(admin.ModelAdmin):
     list_display = ('id', 'vnconversation', 'enconversation')
     search_fields = ('vnconversation', 'enconversation')
+   
