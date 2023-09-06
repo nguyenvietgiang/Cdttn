@@ -1,0 +1,20 @@
+{% extends "baseTemplate.html" %}
+
+{% block content %}
+    <body>
+        <h1>Test Your English Vocabulary</h1>
+    
+        <p>Translate the following Vietnamese word into English:</p>
+        <p>{{ random_entry.vietnam }}</p>
+        
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+        </form>
+        
+        {% if feedback %}
+            <p>{{ feedback }}</p>
+        {% endif %}
+    </body>
+{% endblock %}
