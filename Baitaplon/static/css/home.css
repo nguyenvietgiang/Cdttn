@@ -1,0 +1,37 @@
+body {
+    background-color: #f1f1f1;
+}
+
+.home-img {
+    width: 300px;
+    height: 300px;
+}
+
+.search-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.search-box {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.search-btn {
+    background-color: #4285f4;
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #357ae8;
+}
