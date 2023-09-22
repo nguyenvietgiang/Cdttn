@@ -1,20 +1,33 @@
 {% extends "baseTemplate.html" %}
 
 {% block content %}
-    <body>
-        <h1>Test Your English Vocabulary</h1>
-    
-        <p>Translate the following Vietnamese word into English:</p>
-        <p>{{ random_entry.vietnam }}</p>
-        
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="Submit">
-        </form>
-        
-        {% if feedback %}
-            <p>{{ feedback }}</p>
-        {% endif %}
-    </body>
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h1 class="card-title">Kiểm tra từ vựng</h1>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Nhập từ tiếng anh tương ứng của từ dưới đây:</p>
+                        <p class="card-text">{{ random_entry.vietnam }}</p>
+                        
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <div class="text-center mt-3">
+                                <input type="submit" class="btn btn-primary" value="Kiểm tra">
+                            </div>
+                        </form>
+                        
+                        {% if feedback %}
+                            <div class="alert alert-info mt-3">{{ feedback }}</div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 {% endblock %}

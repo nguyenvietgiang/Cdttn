@@ -1,0 +1,40 @@
+{% extends "baseTemplate.html" %}
+
+{% block content %}
+    <body>
+        <div class="container mt-5">
+            <h1 class="mb-4">FITHOU Dictionary</h1>
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- Khung nhập tiếng Anh -->
+                    <div class="mb-3">
+                        <label for="englishInput" class="form-label">Tiếng Anh</label>
+                        <textarea class="form-control" id="englishInput" rows="5"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <!-- Khung hiển thị tiếng Việt -->
+                    <div class="mb-3">
+                        <label for="vietnameseOutput" class="form-label">Tiếng Việt</label>
+                        <textarea class="form-control" id="vietnameseOutput" rows="5" readonly></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <button class="btn btn-primary" id="translateButton">Dịch</button>
+            </div>
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                $("#translateButton").click(function () {
+                    // Lấy nội dung từ khung nhập tiếng Anh
+                    var englishText = $("#englishInput").val();
+                
+                    var vietnameseText = "Đây là ví dụ về bản dịch từ tiếng Anh sang tiếng Việt.";
+                    $("#vietnameseOutput").val(vietnameseText);
+                });
+            });
+        </script>
+    </body>
+{% endblock %}
