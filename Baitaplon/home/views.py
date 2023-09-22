@@ -2,7 +2,7 @@ from django.shortcuts import render
 # sử dụng để thực hiện các truy vấn and, or
 from django.db.models import Q
 from .models import DictionaryEntry, Conversation
-
+from django.http import JsonResponse
 # Khởi tạo một dict để lưu trữ kết quả cache
 search_cache = {}
 
@@ -32,7 +32,11 @@ def search(request):
     else:
         return render(request, 'home.html')
 
-
+def search_suggestions(request):
+    search_query = request.GET.get('search_query', '')
+    suggestions = DictionaryEntry.objects.filter(english__icontains=search_query)[:5]
+    suggestion_list = [entry.english for entry in suggestions]
+    return JsonResponse(suggestion_list, safe=False)
     
 def get_home(request):
     return render(request,'home.html') 

@@ -51,5 +51,34 @@
     <!-- Copyright -->
   </footer>
   <!-- Footer -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".search-box").on("input", function () {
+            var searchQuery = $(this).val();
+            if (searchQuery.length >= 3) { // Gợi ý sau khi nhập ít nhất 3 ký tự
+                $.ajax({
+                    url: "/search_suggestions/",
+                    data: { search_query: searchQuery },
+                    dataType: "json",
+                    success: function (data) {
+                        var suggestionList = $("#suggestion-list");
+                        suggestionList.empty();
+                        if (data.length > 0) {
+                            data.forEach(function (suggestion) {
+                                suggestionList.append("<li>" + suggestion + "</li>");
+                            });
+                        } else {
+                            suggestionList.append("<li>No suggestions found.</li>");
+                        }
+                    },
+                    error: function (error) {
+                        console.error("Error: " + JSON.stringify(error));
+                    }
+                });
+            }
+        });
+    });
+</script>
 </body>
 </html>

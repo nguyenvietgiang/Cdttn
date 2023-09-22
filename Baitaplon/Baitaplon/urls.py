@@ -19,11 +19,14 @@ from django.urls import path
 from home import views as home
 from mytest import views as mytest
 from conversation import views as conversation
+from splash import views as splash
 
 urlpatterns = [
      path('admin/', admin.site.urls),
-     path('',home.get_home),
+     path('home/',home.get_home),
+     path('search_suggestions/',home.search_suggestions),
      path('search/', home.search),
      path('test/', mytest.test_view),
-     path('convesation/', conversation.get_conversation)
+     path('convesation/', conversation.get_conversation),
+     path('', splash.get_splash)
 ]
