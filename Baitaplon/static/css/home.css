@@ -35,3 +35,29 @@ body {
 .search-btn:hover {
     background-color: #357ae8;
 }
+
+#suggestion-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+#suggestion-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#suggestion-list li:last-child {
+    border-bottom: none;
+}
+
+#suggestion-list li:hover {
+    background-color: #357ae8;
+}
