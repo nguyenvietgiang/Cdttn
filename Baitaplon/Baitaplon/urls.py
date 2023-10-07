@@ -20,10 +20,12 @@ from home import views as home
 from mytest import views as mytest
 from conversation import views as conversation
 from splash import views as splash
+from contact import views as contact
 
 urlpatterns = [
      path('admin/', admin.site.urls),
      path('home/',home.get_home),
+     path('contact/', contact.get_contact),
      path('search_suggestions/',home.search_suggestions),
      path('search/', home.search),
      path('test/', mytest.test_view),

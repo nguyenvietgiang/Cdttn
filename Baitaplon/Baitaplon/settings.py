@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'mytest',
     'conversation',
     'splash',
+    'contact',
 ]
 
 MIDDLEWARE = [
