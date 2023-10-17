@@ -20,6 +20,21 @@ class DictionaryEntry(models.Model):
     class Meta:
         verbose_name_plural = 'Dictionary Entries'
 
+class Synonym(models.Model):
+    entry = models.ForeignKey(DictionaryEntry, related_name='synonyms', on_delete=models.CASCADE)
+    synonym = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"Synonym of {self.entry.english}: {self.synonym}"
+
+class Antonym(models.Model):
+    entry = models.ForeignKey(DictionaryEntry, related_name='antonyms', on_delete=models.CASCADE)
+    antonym = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"Antonym of {self.entry.english}: {self.antonym}"
+
+
 class Conversation(models.Model):
     id = models.AutoField(primary_key=True)  
     vnconversation = models.CharField(max_length=500)

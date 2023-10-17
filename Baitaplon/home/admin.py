@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import DictionaryEntry, Conversation
+from .models import DictionaryEntry, Conversation , Synonym, Antonym
 
 @admin.register(DictionaryEntry)
 class DictionaryEntryAdmin(admin.ModelAdmin):
@@ -14,4 +14,15 @@ class DictionaryEntryAdmin(admin.ModelAdmin):
 class ConversationAdmin(admin.ModelAdmin):
     list_display = ('id', 'vnconversation', 'enconversation')
     search_fields = ('vnconversation', 'enconversation')
-   
+
+@admin.register(Synonym)
+class SynonymAdmin(admin.ModelAdmin):
+    list_display = ('id', 'entry', 'synonym')
+    search_fields = ('entry__english', 'synonym')
+    list_display_links = ('id', 'synonym')
+
+@admin.register(Antonym)
+class AntonymAdmin(admin.ModelAdmin):
+    list_display = ('id', 'entry', 'antonym')
+    search_fields = ('entry__english', 'antonym')
+    list_display_links = ('id', 'antonym')
