@@ -25,7 +25,7 @@ from contact import views as contact
 urlpatterns = [
      path('admin/', admin.site.urls),
      path('home/',home.get_home),
-     path('contact/', contact.get_contact),
+     path('contact/', contact.get_contact, name='save_contact'),
      path('search_suggestions/',home.search_suggestions),
      path('search/', home.search),
      path('test/', mytest.test_view),

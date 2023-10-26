@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-KyZXEAg3pMks1tvZHjR%2B40H2R4b%2BtPJABUVEXdXQmEIdkIbbVYUew+OrCXaRkfjU" crossorigin="anonymous">
     {% load static%}
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
   </head>
-<body>
+<body class="d-flex flex-column min-vh-100 mt-auto">
   <header>
     <nav class="navbar navbar-dark bg-primary">
       <div class="container-fluid">
@@ -31,7 +32,7 @@
     </main>
     
      <!-- Footer -->
-  <footer class="text-center text-white bg-primary">
+  <footer class="text-center text-white bg-primary" style="margin-top: 200px;">
     <!-- Grid container -->
     <div class="container p-4 pb-0">
       <!-- Section: CTA -->
@@ -54,32 +55,36 @@
   <!-- Footer -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    $(document).ready(function () {
-        $(".search-box").on("input", function () {
-            var searchQuery = $(this).val();
-            if (searchQuery.length >= 3) { // Gợi ý sau khi nhập ít nhất 3 ký tự
-                $.ajax({
-                    url: "/search_suggestions/",
-                    data: { search_query: searchQuery },
-                    dataType: "json",
-                    success: function (data) {
-                        var suggestionList = $("#suggestion-list");
-                        suggestionList.empty();
-                        if (data.length > 0) {
-                            data.forEach(function (suggestion) {
-                                suggestionList.append("<li>" + suggestion + "</li>");
-                            });
-                        } else {
-                            suggestionList.append("<li>No suggestions found.</li>");
-                        }
-                    },
-                    error: function (error) {
-                        console.error("Error: " + JSON.stringify(error));
+  $(document).ready(function () {
+    $(".search-box").on("input", function () {
+        var searchQuery = $(this).val();
+        if (searchQuery.length >= 3) {
+            $.ajax({
+                url: "/search_suggestions/",
+                data: { search_query: searchQuery },
+                dataType: "json",
+                success: function (data) {
+                    var suggestionList = $("#suggestion-list");
+                    suggestionList.empty();
+                    if (data.length > 0) {
+                        data.forEach(function (suggestion) {
+                            suggestionList.append("<li class='suggestion-item'>" + suggestion + "</li>");
+                        });
+                        $(".suggestion-item").on("click", function () {
+                            var selectedSuggestion = $(this).text();
+                            window.location.href = "/search/?search_query=" + selectedSuggestion;
+                        });
+                    } else {
+                        suggestionList.append("<li>Không có từ thích hợp.</li>");
                     }
-                });
-            }
-        });
+                },
+                error: function (error) {
+                    console.error("Error: " + JSON.stringify(error));
+                }
+            });
+        }
     });
+});
 </script>
 </body>
 </html>

@@ -5,10 +5,15 @@ from .forms import EnglishInputForm
 
 from home.models import DictionaryEntry  
 
+
+dictionary_entries = {entry.id: entry for entry in DictionaryEntry.objects.all()}
 def test_view(request):
+    #random_entry = choice(DictionaryEntry.objects.all())
   
-    random_entry = choice(DictionaryEntry.objects.all())
-    
+   # Chọn một ID ngẫu nhiên từ hash table
+    random_entry_id = choice(list(dictionary_entries.keys()))
+
+    random_entry = dictionary_entries[random_entry_id]
    
     if request.method == 'POST':
         form = EnglishInputForm(request.POST)

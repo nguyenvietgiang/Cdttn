@@ -2,13 +2,20 @@
 
 {% block content %}
     <body>
-        <div class="search-container">
-            <img src="https://hou.edu.vn/files/iconkhoa/DV01.png" alt="FitHou Logo" style="width: 300px; height: 300px;">
-            <form action="/search" method="GET">
-                <input type="text" name="search_query" class="search-box" placeholder="Nhập từ khóa bạn cần tra">
-                <ul id="suggestion-list"></ul>
-                <input type="submit" value="Tìm kiếm" class="search-btn">
-            </form>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="search-container">
+                        <img src="https://hou.edu.vn/files/iconkhoa/DV01.png" alt="FitHou Logo" class="img-fluid mb-4" style="width: 300px; height: 300px;">
+                        <form action="/search" method="GET">
+                            <input type="text" name="search_query" class="form-control search-box"
+                                placeholder="Nhập từ khóa bạn cần tra">
+                            <ul id="suggestion-list" class="list-group mt-2"></ul>
+                            <input type="submit" value="Tìm kiếm" class="btn btn-primary search-btn">
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
 {% endblock %}

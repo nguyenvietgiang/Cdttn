@@ -14,3 +14,4 @@ pip install googletrans==3.1.0a0
 ## Đăng nhập để quản lý CSDL với tài khoản: vietgiang, mật khẩu: vip1111.
 
    Mở trình duyệt và truy cập địa chỉ [http://localhost:8888/](http://localhost:8888/).
+   Mở trình duyệt và truy cập địa chỉ trang quản trị [http://localhost:8888/admin](http://localhost:8888/admin). 
