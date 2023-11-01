@@ -28,7 +28,9 @@ urlpatterns = [
      path('contact/', contact.get_contact, name='save_contact'),
      path('search_suggestions/',home.search_suggestions),
      path('search/', home.search),
-     path('test/', mytest.test_view),
+     path('translate/', home.translate, name='translate'),
+     path('test/', mytest.test_view , name='test_view'),
+    path('change-word/', mytest.change_word_view, name='change_word'),
      path('convesation/', conversation.get_conversation),
      path('', splash.get_splash)
 ]

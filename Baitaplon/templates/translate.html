@@ -1,0 +1,22 @@
+{% extends "baseTemplate.html" %}
+
+{% block content %}
+    <body>
+        <div class="container">
+            <h1>Translate English to Vietnamese</h1>
+            <form action="{% url 'translate' %}" method="get">
+                <label for="english_word">Enter English word:</label>
+                <input type="text" id="english_word" name="english_word" required>
+                <button type="submit">Translate</button>
+            </form>
+        
+            {% if vietnamese_translation %}
+                <h2>Tiếng Việt tương ứng: {{ vietnamese_translation }}</h2>
+            {% elif not english_word and vietnamese_translation == '' %}
+                <p>Vui lòng nhập từ tiếng Anh để dịch.</p>
+            {% else %}
+                <p>Không tìm thấy từ tương ứng.</p>
+            {% endif %}
+        </div>
+    </body>
+{% endblock %}

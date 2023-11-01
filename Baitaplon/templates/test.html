@@ -5,7 +5,7 @@
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
+                <div class="card" style="margin-top: 50px;">
                     <div class="card-header">
                         <h1 class="card-title">Kiểm tra từ vựng</h1>
                     </div>
@@ -20,7 +20,12 @@
                                 <input type="submit" class="btn btn-primary" value="Kiểm tra">
                             </div>
                         </form>
-                        
+<!-- Thêm nút Đổi từ vào form -->
+<form method="post" action="{% url 'change_word' %}">
+    {% csrf_token %}
+    <input type="submit" class="btn btn-secondary" value="Đổi từ">
+</form>
+
                         {% if feedback %}
                             <div class="alert alert-info mt-3">{{ feedback }}</div>
                         {% endif %}
