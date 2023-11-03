@@ -18,6 +18,7 @@
           <a href="/" class="navbar-brand">FitHou Dictionary</a>
           <ul class="navbar-nav ml-auto">
               <li class="nav-item">
+                  <a href="/category" class="navbar-brand">Loại từ</a>
                   <a href="/test" class="navbar-brand">Kiểm tra</a>
                   <a href="/convesation" class="navbar-brand">Dịnh câu</a>
                   <a href="/contact" class="navbar-brand">Góp ý</a>
@@ -32,7 +33,7 @@
     </main>
     
      <!-- Footer -->
-  <footer class="text-center text-white bg-primary" style="margin-top: 200px;">
+  <footer class="text-center text-white bg-primary" style="margin-top: 250px;">
     <!-- Grid container -->
     <div class="container p-4 pb-0">
       <!-- Section: CTA -->
@@ -85,6 +86,14 @@
         }
     });
 });
+</script>
+<!-- Category script -->
+<script>
+  function redirectToPath(selectedOption) {
+      var categoryMapping = {{ category_mapping|safe }};
+      var selectedPath = categoryMapping[selectedOption];
+      window.location.href = selectedPath;
+  }
 </script>
 </body>
 </html>

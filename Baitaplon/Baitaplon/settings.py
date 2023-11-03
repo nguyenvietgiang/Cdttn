@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'conversation',
     'splash',
     'contact',
+    'category',
 ]
 
 MIDDLEWARE = [
