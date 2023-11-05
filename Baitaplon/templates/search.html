@@ -1,0 +1,50 @@
+{% extends "baseTemplate.html" %}
+
+{% block content %}
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+        <img src="https://hou.edu.vn/files/iconkhoa/DV01.png" alt="FitHou Logo" class="img-fluid mb-4" style="width: 200px; height: 200px;">
+        </div>
+        <div class="form-container bg-light p-4 rounded">
+            <form method="post" class="form-group">
+                {% csrf_token %}
+                <div class="d-flex align-items-center">
+                    <input type="text" id="english_word" name="english_word" class="form-control mb-0" placeholder="Tìm kiếm..">
+                    <button type="submit" class="btn btn-primary ml-3">Dịch</button>
+                </div>
+            </form>
+            {% if word_entry %}
+                <div class="mt-4">
+                    <p><strong>Từ tiếng Anh:</strong> {{ english_word }}</p>
+                    <p><strong>Dịch nghĩa:</strong> {{ word_entry.vietnamese_meaning }}</p>
+                    <p><strong>Phát âm:</strong> Ảnh minh họa:</p>
+                    <img src="{{ word_entry.image_url }}" alt="Hình ảnh minh họa" class="img-fluid mb-2">
+                    <div class="audio-player">
+                        Cách phát âm: <span id="play-button" class="play-button">
+                            <i class="fas fa-volume-up"></i>
+                        </span>
+                        <audio id="audio-player" controls style="display: none;">
+                            <source src="{{ word_entry.pronunciation }}" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+            {% elif english_word %}
+                <div class="mt-4">
+                    <p><strong>Từ tiếng Anh:</strong> {{ english_word }}</p>
+                    <p>Không tìm thấy trong từ điển.</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+<script>
+    const playButton = document.getElementById('play-button');
+    const audioPlayer = document.getElementById('audio-player');
+    
+    playButton.addEventListener('click', function() {
+        audioPlayer.play();
+    });
+</script>
+{% endblock %}

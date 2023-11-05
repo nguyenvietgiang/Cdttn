@@ -22,15 +22,17 @@ from conversation import views as conversation
 from splash import views as splash
 from contact import views as contact
 from category import views as cate
+from search import views as searchview
 urlpatterns = [
      path('admin/', admin.site.urls),
-     path('home/',home.get_home),
+     path('search/',home.get_home),
      path('contact/', contact.get_contact, name='save_contact'),
      path('search_suggestions/',home.search_suggestions),
-     path('search/', home.search, name="search"),
+     path('homesearch/', home.search, name="search"),
      path('translate/', home.translate, name='translate'),
-     path('test/', mytest.test_view , name='test_view'),
-     path('change-word/', mytest.change_word_view, name='change_word'),
+     path('home/',searchview.get_product, name='product'),
+     path('test/', mytest.get_random, name='test_view'),
+     path('change',mytest.change_word, name='change_word'  ),
      path('convesation/', conversation.get_conversation),
      path('category/<str:category>/', cate.dictionary_by_category, name='dictionary_by_category'),
      path('category/',cate.get_category),

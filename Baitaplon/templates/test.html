@@ -10,8 +10,8 @@
                         <h1 class="card-title">Kiểm tra từ vựng</h1>
                     </div>
                     <div class="card-body">
-                        <p class="card-text">Nhập từ tiếng anh tương ứng của từ dưới đây:</p>
-                        <p class="card-text">{{ random_entry.vietnam }}</p>
+                        <p class="card-text">Nhập từ tiếng Việt tương ứng với từ dưới đây:</p>
+                        <p class="card-text">{{ english_word }}</p>
                         
                         <form method="post">
                             {% csrf_token %}
@@ -20,19 +20,15 @@
                                 <input type="submit" class="btn btn-primary" value="Kiểm tra">
                             </div>
                         </form>
-<!-- Thêm nút Đổi từ vào form -->
-<form method="post" action="{% url 'change_word' %}">
-    {% csrf_token %}
-    <input type="submit" class="btn btn-secondary" value="Đổi từ">
-</form>
-
                         {% if feedback %}
                             <div class="alert alert-info mt-3">{{ feedback }}</div>
                         {% endif %}
                     </div>
+                    <a href="{% url 'change_word' %}" class="btn btn-secondary">Đổi từ mới</a>
                 </div>
             </div>
         </div>
     </div>
 </body>
+
 {% endblock %}
