@@ -1,0 +1,12 @@
+
+[INFO] 2023-11-08 21:30:53 - GET / - Processed in 0.00 seconds, Response size: 555 bytes
+[INFO] 2023-11-08 21:30:53 - GET /favicon.ico - Processed in 0.02 seconds, Response size: 3824 bytes
+[INFO] 2023-11-08 21:30:56 - GET /home/ - Processed in 0.00 seconds, Response size: 5088 bytes
+[INFO] 2023-11-08 21:32:05 - POST /home/ - Processed in 0.00 seconds, Response size: 5317 bytes
+[INFO] 2023-11-08 21:35:08 - GET /home/ - Processed in 0.00 seconds, Response size: 5088 bytes
+[INFO] 2023-11-08 21:35:09 - GET /favicon.ico - Processed in 0.01 seconds, Response size: 3824 bytes
+[INFO] 2023-11-08 21:39:43 - GET /convesation/ - Processed in 0.11 seconds, Response size: 5350 bytes
+[INFO] 2023-11-08 21:39:44 - GET /test/ - Processed in 0.04 seconds, Response size: 5421 bytes
+[INFO] 2023-11-08 21:39:46 - GET / - Processed in 0.00 seconds, Response size: 555 bytes
+[INFO] 2023-11-08 21:39:48 - GET /home/ - Processed in 0.00 seconds, Response size: 5088 bytes
+[INFO] 2023-11-08 21:39:52 - POST /home/ - Processed in 0.00 seconds, Response size: 5317 bytes

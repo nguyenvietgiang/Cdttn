@@ -18,7 +18,7 @@
                 <div class="mt-4">
                     <p><strong>Từ tiếng Anh:</strong> {{ english_word }}</p>
                     <p><strong>Dịch nghĩa:</strong> {{ word_entry.vietnamese_meaning }}</p>
-                    <p><strong>Phát âm:</strong> Ảnh minh họa:</p>
+                    {% comment %} <p><strong>Phát âm:</strong> Ảnh minh họa:</p>
                     <img src="{{ word_entry.image_url }}" alt="Hình ảnh minh họa" class="img-fluid mb-2">
                     <div class="audio-player">
                         Cách phát âm: <span id="play-button" class="play-button">
@@ -28,7 +28,7 @@
                             <source src="{{ word_entry.pronunciation }}" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
-                    </div>
+                    </div> {% endcomment %}
                 </div>
             {% elif english_word %}
                 <div class="mt-4">

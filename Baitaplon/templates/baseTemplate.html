@@ -73,7 +73,7 @@
                         });
                         $(".suggestion-item").on("click", function () {
                             var selectedSuggestion = $(this).text();
-                            window.location.href = "/search/?search_query=" + selectedSuggestion;
+                            window.location.href = "/homesearch/?search_query=" + selectedSuggestion;
                         });
                     } else {
                         suggestionList.append("<li>Không có từ thích hợp.</li>");
@@ -95,5 +95,13 @@
       window.location.href = selectedPath;
   }
 </script>
+{% comment %} <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  chat-icon="https:&#x2F;&#x2F;upload.wikimedia.org&#x2F;wikipedia&#x2F;vi&#x2F;thumb&#x2F;8&#x2F;89&#x2F;Nam_%C4%90%E1%BB%8Bnh_FC_logo.svg&#x2F;1200px-Nam_%C4%90%E1%BB%8Bnh_FC_logo.svg.png"
+  intent="WELCOME"
+  chat-title="Nam-Dinh-FC"
+  agent-id="4e84cd91-1a64-4a79-ad0f-0d026e462b3c"
+  language-code="vi"
+></df-messenger> {% endcomment %}
 </body>
 </html>

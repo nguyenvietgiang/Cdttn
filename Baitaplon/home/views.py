@@ -3,7 +3,8 @@ from django.shortcuts import render
 from django.db.models import Q
 from .models import DictionaryEntry, Conversation
 from django.http import JsonResponse
-
+import pandas as pd
+from django.http import JsonResponse
 
 # Tải dữ liệu từ cơ sở dữ liệu và chuyển đổi thành một từ điển (dictionary)
 # Các từ tiếng Anh là khóa (key), và các dịch tiếng Việt tương ứng là giá trị (value)
@@ -74,6 +75,32 @@ def search_suggestions(request):
     suggestion_list = [entry.english for entry in suggestions]
     return JsonResponse(suggestion_list, safe=False)
 
+def import_data_from_excel(request):
+    if request.method == 'POST' and request.FILES['excel_file']:
+        excel_file = request.FILES['excel_file']
+        try:
+            # Sử dụng pandas để đọc dữ liệu từ file Excel
+            df = pd.read_excel(excel_file)
+            
+            # Duyệt qua từng dòng trong dataframe và thêm vào CSDL
+            for index, row in df.iterrows():
+                entry = DictionaryEntry(
+                    english=row['english'],
+                    vietnam=row['vietnam'],
+                    category=row['category'],
+                    image=row['image'],
+                    pronounce=row['pronounce']
+                )
+                entry.save()
+
+            return JsonResponse({'message': 'Dữ liệu đã được nhập thành công từ file Excel.'})
+        except Exception as e:
+            return JsonResponse({'error': str(e)}, status=500)
+    else:
+        return JsonResponse({'error': 'Yêu cầu không hợp lệ.'}, status=400)
 
 def get_home(request):
     return render(request,'home.html') 
+
+def get_import(request):
+    return render(request,'import.html') 

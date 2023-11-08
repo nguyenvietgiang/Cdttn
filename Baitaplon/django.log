@@ -1,0 +1,19 @@
+
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 555
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 3824
+"GET /home/ HTTP/1.1" 200 5088
+"POST /home/ HTTP/1.1" 200 5317
+"GET /home/ HTTP/1.1" 200 5088
+"GET /static/css/base.css HTTP/1.1" 200 88
+"GET /static/css/home.css HTTP/1.1" 200 1092
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 3824
+E:\Django\Cdttn\Baitaplon\Baitaplon\settings.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /convesation/ HTTP/1.1" 200 5350
+"GET /test/ HTTP/1.1" 200 5421
+"GET / HTTP/1.1" 200 555
+"GET /home/ HTTP/1.1" 200 5088
+"POST /home/ HTTP/1.1" 200 5317

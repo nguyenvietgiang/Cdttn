@@ -9,7 +9,7 @@
         {% for result_type, entry in results %}
             <div class="col-md-4 mb-4">
                 <div class="card">
-                    <img src="{{ entry.image }}" class="card-img-top" alt="{{ entry.english }}">
+                    {% comment %} <img src="{{ entry.image }}" class="card-img-top" alt="{{ entry.english }}"> {% endcomment %}
                     <div class="card-body">
                         <h5 class="card-title">
                             {% if result_type == 'dictionary' %}
@@ -18,7 +18,7 @@
                                 Nghĩa tiếng Việt: {{ entry.vietnam }}
                                 <br>
                                 Loại từ: {{entry.category}}
-                                <div class="audio-player">
+                                {% comment %} <div class="audio-player">
                                     Cách phát âm: <span id="play-button" class="play-button">
                                         <i class="fas fa-volume-up"></i>
                                     </span>
@@ -26,12 +26,12 @@
                                         <source src="{{ entry.pronounce }}" type="audio/mpeg">
                                         Your browser does not support the audio element.
                                     </audio>
-                                </div>
+                                </div> {% endcomment %}
                             {% elif result_type == 'conversation' %}
                             Hội thoại
                             {% endif %}
                         </h5>
-                        <p class="card-text">
+                        {% comment %} <p class="card-text">
                             {% if result_type == 'conversation' %}
                                 {% if entry.enconversation %}
                                     Tiếng Anh: {{ entry.enconversation }}
@@ -41,7 +41,7 @@
                                     Tiếng Việt: {{ entry.vnconversation }}
                                 {% endif %}
                             {% endif %}
-                        </p>
+                        </p> {% endcomment %}
                     </div>
                 </div>
             </div>
