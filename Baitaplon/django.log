@@ -1,1 +1,48 @@
 
+Watching for file changes with StatReloader
+"POST /home/ HTTP/1.1" 200 5390
+Not Found: /static/css/home.css
+Not Found: /static/css/base.css
+"GET /static/css/base.css HTTP/1.1" 404 179
+"GET /static/css/home.css HTTP/1.1" 404 179
+"GET / HTTP/1.1" 200 555
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 179
+"GET /home/ HTTP/1.1" 200 5162
+Not Found: /static/css/base.css
+Not Found: /static/css/home.css
+"GET /static/css/base.css HTTP/1.1" 404 179
+"GET /static/css/home.css HTTP/1.1" 404 179
+Not Found: /static/css/base.css
+Not Found: /static/css/home.css
+"GET /static/css/base.css HTTP/1.1" 404 179
+"GET /static/css/home.css HTTP/1.1" 404 179
+"GET /translatev2/ HTTP/1.1" 200 4678
+Not Found: /static/css/base.css
+Not Found: /static/css/home.css
+"GET /static/css/base.css HTTP/1.1" 404 179
+"GET /static/css/home.css HTTP/1.1" 404 179
+Not Found: /static/css/home.css
+Not Found: /static/css/base.css
+"GET /static/css/home.css HTTP/1.1" 404 179
+"GET /static/css/base.css HTTP/1.1" 404 179
+"POST /home/ HTTP/1.1" 200 5391
+Not Found: /static/css/home.css
+Not Found: /static/css/base.css
+"GET /static/css/home.css HTTP/1.1" 404 179
+"GET /static/css/base.css HTTP/1.1" 404 179
+"POST /translatev2/ HTTP/1.1" 200 4815
+Not Found: /static/css/home.css
+Not Found: /static/css/base.css
+"GET /static/css/home.css HTTP/1.1" 404 179
+"GET /static/css/base.css HTTP/1.1" 404 179
+"POST /home/ HTTP/1.1" 200 5390
+Not Found: /static/css/base.css
+Not Found: /static/css/home.css
+"GET /static/css/base.css HTTP/1.1" 404 179
+"GET /static/css/home.css HTTP/1.1" 404 179
+"POST /translatev2/ HTTP/1.1" 200 4814
+Not Found: /static/css/base.css
+Not Found: /static/css/home.css
+"GET /static/css/home.css HTTP/1.1" 404 179
+"GET /static/css/base.css HTTP/1.1" 404 179
