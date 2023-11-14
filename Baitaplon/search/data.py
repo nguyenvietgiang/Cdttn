@@ -1,5 +1,7 @@
+# Import WordEntry và HashTable từ module .models
 from .models import WordEntry, HashTable
 
+# Khởi tạo một đối tượng HashTable với kích thước 1000
 hash_table = HashTable(1000)
 hash_table.insert("Hello", WordEntry("xin chào", "https://media.makeameme.org/created/hello-sir-my-59f1d3.jpg", "https://dictionary.cambridge.org/vi/media/english/uk_pron/u/ukh/ukhef/ukheft_029.mp3"))
 hash_table.insert("Football", WordEntry("Bóng đá", "https://images.indianexpress.com/2022/06/india-Football-pic-credit-aiff.jpg", "https://dictionary.cambridge.org/media/english/us_pron/f/foo/footb/football.mp3"))

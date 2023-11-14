@@ -1,0 +1,22 @@
+{% extends "baseTemplate.html" %}
+
+{% block content %}
+<body class="container mt-5">
+    <h1 class="display-4">Từ điển Anh - Việt</h1>
+
+    <form method="post" action="{% url 'english_to_vietnamese' %}" class="mt-4">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.as_p }}
+        </div>
+        <button type="submit" class="btn btn-primary">Translate</button>
+    </form>
+
+    {% if translation %}
+        <div class="mt-4">
+            <h2>Translation:</h2>
+            <p class="lead">{{ translation }}</p>
+        </div>
+    {% endif %}
+</body>
+{% endblock %}

@@ -5,6 +5,7 @@ from .models import DictionaryEntry, Conversation
 from django.http import JsonResponse
 import pandas as pd
 from django.http import JsonResponse
+from .forms import EnglishToVietnameseForm
 
 # Tải dữ liệu từ cơ sở dữ liệu và chuyển đổi thành một từ điển (dictionary)
 # Các từ tiếng Anh là khóa (key), và các dịch tiếng Việt tương ứng là giá trị (value)
@@ -104,3 +105,21 @@ def get_home(request):
 
 def get_import(request):
     return render(request,'import.html') 
+
+def english_to_vietnamese(request):
+    translation = None
+
+    if request.method == 'POST':
+        form = EnglishToVietnameseForm(request.POST)
+        if form.is_valid():
+            english_word = form.cleaned_data['english_word']
+            try:
+                entry = DictionaryEntry.objects.get(english=english_word)
+                translation = entry.vietnam
+            except DictionaryEntry.DoesNotExist:
+                translation = 'Not found'
+
+    else:
+        form = EnglishToVietnameseForm()
+
+    return render(request, 'translation_page.html', {'form': form, 'translation': translation})
