@@ -79,3 +79,9 @@
 [INFO] 1970-01-09 06:50:05 - GET /static/admin/js/theme.js - Processed in 0.000347 seconds, Response size: 179 bytes, CPU Usage: 0.0%, Memory Usage: 92.5%
 [INFO] 1970-01-09 06:50:05 - GET /static/admin/css/responsive.css - Processed in 0.000347 seconds, Response size: 179 bytes, CPU Usage: 0.0%, Memory Usage: 92.5%
 [INFO] 1970-01-09 06:50:05 - GET /static/admin/js/nav_sidebar.js - Processed in 0.000816 seconds, Response size: 179 bytes, CPU Usage: 77.8%, Memory Usage: 92.5%
+[INFO] 1970-01-09 06:55:46 - GET / - Processed in 0.005726 seconds, Response size: 555 bytes, CPU Usage: 0.0%, Memory Usage: 92.6%
+[INFO] 1970-01-09 06:55:49 - GET /home/ - Processed in 0.007332 seconds, Response size: 5162 bytes, CPU Usage: 19.2%, Memory Usage: 93.8%
+[INFO] 1970-01-09 06:55:49 - GET /static/css/home.css - Processed in 0.000713 seconds, Response size: 179 bytes, CPU Usage: 75.0%, Memory Usage: 93.8%
+[INFO] 1970-01-09 06:55:49 - GET /static/css/base.css - Processed in 0.000367 seconds, Response size: 179 bytes, CPU Usage: 0.0%, Memory Usage: 93.8%
+[INFO] 1970-01-09 06:55:49 - GET /static/css/base.css - Processed in 0.000281 seconds, Response size: 179 bytes, CPU Usage: 66.7%, Memory Usage: 93.9%
+[INFO] 1970-01-09 06:55:49 - GET /static/css/home.css - Processed in 0.000310 seconds, Response size: 179 bytes, CPU Usage: 66.7%, Memory Usage: 93.9%
