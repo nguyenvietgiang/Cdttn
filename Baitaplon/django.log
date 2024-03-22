@@ -46,3 +46,4 @@ Not Found: /static/css/base.css
 Not Found: /static/css/home.css
 "GET /static/css/home.css HTTP/1.1" 404 179
 "GET /static/css/base.css HTTP/1.1" 404 179
+Watching for file changes with StatReloader
