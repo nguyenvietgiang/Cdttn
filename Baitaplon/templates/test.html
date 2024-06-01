@@ -1,34 +1,35 @@
-{% extends "baseTemplate.html" %}
-
-{% block content %}
+{% extends "baseTemplate.html" %} {% block content %}
 <body class="bg-light">
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card" style="margin-top: 50px;">
-                    <div class="card-header">
-                        <h1 class="card-title">Kiểm tra từ vựng</h1>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">Nhập từ tiếng Việt tương ứng với từ dưới đây:</p>
-                        <p class="card-text">{{ english_word }}</p>
-                        
-                        <form method="post">
-                            {% csrf_token %}
-                            {{ form.as_p }}
-                            <div class="text-center mt-3">
-                                <input type="submit" class="btn btn-primary" value="Kiểm tra">
-                            </div>
-                        </form>
-                        {% if feedback %}
-                            <div class="alert alert-info mt-3">{{ feedback }}</div>
-                        {% endif %}
-                    </div>
-                    <a href="{% url 'change_word' %}" class="btn btn-secondary">Đổi từ mới</a>
-                </div>
-            </div>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card" style="margin-top: 50px">
+          <div class="card-header">
+            <h1 class="card-title">Kiểm tra từ vựng tiếng Anh</h1>
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              Nhập từ tiếng Việt tương ứng với từ dưới đây:
+            </p>
+            <p class="card-text">{{ english_word }}</p>
+
+            <form method="post">
+              {% csrf_token %} {{ form.as_p }}
+              <div class="text-center mt-3">
+                <input type="submit" class="btn btn-primary" value="Kiểm tra" />
+              </div>
+            </form>
+            {% if feedback %}
+            <div class="alert alert-info mt-3">{{ feedback }}</div>
+            {% endif %}
+          </div>
+          <a href="{% url 'change_word' %}" class="btn btn-secondary"
+            >Đổi từ mới</a
+          >
         </div>
+      </div>
     </div>
+  </div>
 </body>
 
 {% endblock %}

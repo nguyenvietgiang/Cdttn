@@ -1,108 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FitHou Dictionary</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-KyZXEAg3pMks1tvZHjR%2B40H2R4b%2BtPJABUVEXdXQmEIdkIbbVYUew+OrCXaRkfjU" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha384-KyZXEAg3pMks1tvZHjR%2B40H2R4b%2BtPJABUVEXdXQmEIdkIbbVYUew+OrCXaRkfjU"
+      crossorigin="anonymous"
+    />
     {% load static%}
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
   </head>
-<body class="d-flex flex-column min-vh-100 mt-auto">
-  <header>
-    <nav class="navbar navbar-dark bg-primary">
-      <div class="container-fluid">
+  <body class="d-flex flex-column min-vh-100 mt-auto">
+    <header>
+      <nav class="navbar navbar-dark bg-primary">
+        <div class="container-fluid">
           <a href="/" class="navbar-brand">FitHou Dictionary</a>
           <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <!--   <a href="/category" class="navbar-brand">Loại từ</a> -->
-                  <a href="/homesearch" class="navbar-brand">Tra từ</a>
-                  <a href="/test" class="navbar-brand">Kiểm tra</a>
-                  <a href="/convesation" class="navbar-brand">Dịnh câu</a>
-                  <a href="/contact" class="navbar-brand">Góp ý</a>
-              </li>
+            <li class="nav-item">
+              <!--   <a href="/category" class="navbar-brand">Loại từ</a> -->
+              <a href="/homesearch" class="navbar-brand">Tra từ</a>
+              <a href="/test" class="navbar-brand">Kiểm tra</a>
+              <a href="/convesation" class="navbar-brand">Dịnh câu</a>
+              <a href="/contact" class="navbar-brand">Góp ý</a>
+            </li>
           </ul>
+        </div>
+      </nav>
+    </header>
+    <main>{% block content %}{% endblock %}</main>
+
+    <!-- Footer -->
+    <footer class="text-center text-white bg-primary" style="margin-top: 250px">
+      <!-- Grid container -->
+      <div class="container p-4 pb-0">
+        <!-- Section: CTA -->
+        <section class="">
+          <p class="d-flex justify-content-center align-items-center">
+            <span class="me-3">Sản phẩm của G01 - Đại học Mở Hà Nội</span>
+          </p>
+        </section>
+        <!-- Section: CTA -->
       </div>
-  </nav>
-  
-</header>
-    <main>
-        {% block content %}{% endblock %}
-    </main>
-    
-     <!-- Footer -->
-  <footer class="text-center text-white bg-primary" style="margin-top: 250px;">
-    <!-- Grid container -->
-    <div class="container p-4 pb-0">
-      <!-- Section: CTA -->
-      <section class="">
-        <p class="d-flex justify-content-center align-items-center">
-          <span class="me-3">Sản phẩm của G01</span>
-        </p>
-      </section>
-      <!-- Section: CTA -->
-    </div>
-    <!-- Grid container -->
-    <hr>
-    <!-- Copyright -->
-    <div class="text-center p-3 bg-primary">
-      © 2023 Copyright:
-      <a class="text-white" href="https://mdbootstrap.com/">FitHou Dictionary</a>
-    </div>
-    <!-- Copyright -->
-  </footer>
-  <!-- Footer -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-  $(document).ready(function () {
-    $(".search-box").on("input", function () {
-        var searchQuery = $(this).val();
-        if (searchQuery.length >= 3) {
+      <!-- Grid container -->
+      <hr />
+      <!-- Copyright -->
+      <div class="text-center p-3 bg-primary">
+        © 2023 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/"
+          >FitHou Dictionary</a
+        >
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".search-box").on("input", function () {
+          var searchQuery = $(this).val();
+          if (searchQuery.length >= 3) {
             $.ajax({
-                url: "/search_suggestions/",
-                data: { search_query: searchQuery },
-                dataType: "json",
-                success: function (data) {
-                    var suggestionList = $("#suggestion-list");
-                    suggestionList.empty();
-                    if (data.length > 0) {
-                        data.forEach(function (suggestion) {
-                            suggestionList.append("<li class='suggestion-item'>" + suggestion + "</li>");
-                        });
-                        $(".suggestion-item").on("click", function () {
-                            var selectedSuggestion = $(this).text();
-                            window.location.href = "/homesearch/?search_query=" + selectedSuggestion;
-                        });
-                    } else {
-                        suggestionList.append("<li>Không có từ thích hợp.</li>");
-                    }
-                },
-                error: function (error) {
-                    console.error("Error: " + JSON.stringify(error));
+              url: "/search_suggestions/",
+              data: { search_query: searchQuery },
+              dataType: "json",
+              success: function (data) {
+                var suggestionList = $("#suggestion-list");
+                suggestionList.empty();
+                if (data.length > 0) {
+                  data.forEach(function (suggestion) {
+                    suggestionList.append(
+                      "<li class='suggestion-item'>" + suggestion + "</li>"
+                    );
+                  });
+                  $(".suggestion-item").on("click", function () {
+                    var selectedSuggestion = $(this).text();
+                    window.location.href =
+                      "/homesearch/?search_query=" + selectedSuggestion;
+                  });
+                } else {
+                  suggestionList.append("<li>Không có từ thích hợp.</li>");
                 }
+              },
+              error: function (error) {
+                console.error("Error: " + JSON.stringify(error));
+              },
             });
-        }
-    });
-});
-</script>
-<!-- Category script -->
-<script>
-  function redirectToPath(selectedOption) {
-      var categoryMapping = {{ category_mapping|safe }};
-      var selectedPath = categoryMapping[selectedOption];
-      window.location.href = selectedPath;
-  }
-</script>
-{% comment %} <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-<df-messenger
-  chat-icon="https:&#x2F;&#x2F;upload.wikimedia.org&#x2F;wikipedia&#x2F;vi&#x2F;thumb&#x2F;8&#x2F;89&#x2F;Nam_%C4%90%E1%BB%8Bnh_FC_logo.svg&#x2F;1200px-Nam_%C4%90%E1%BB%8Bnh_FC_logo.svg.png"
-  intent="WELCOME"
-  chat-title="Nam-Dinh-FC"
-  agent-id="4e84cd91-1a64-4a79-ad0f-0d026e462b3c"
-  language-code="vi"
-></df-messenger> {% endcomment %}
-</body>
+          }
+        });
+      });
+    </script>
+    <!-- Category script -->
+    <script>
+      function redirectToPath(selectedOption) {
+          var categoryMapping = {{ category_mapping|safe }};
+          var selectedPath = categoryMapping[selectedOption];
+          window.location.href = selectedPath;
+      }
+    </script>
+    {% comment %}
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger
+      chat-icon="https:&#x2F;&#x2F;upload.wikimedia.org&#x2F;wikipedia&#x2F;vi&#x2F;thumb&#x2F;8&#x2F;89&#x2F;Nam_%C4%90%E1%BB%8Bnh_FC_logo.svg&#x2F;1200px-Nam_%C4%90%E1%BB%8Bnh_FC_logo.svg.png"
+      intent="WELCOME"
+      chat-title="Nam-Dinh-FC"
+      agent-id="4e84cd91-1a64-4a79-ad0f-0d026e462b3c"
+      language-code="vi"
+    ></df-messenger>
+    {% endcomment %}
+  </body>
 </html>
