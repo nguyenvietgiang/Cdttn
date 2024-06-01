@@ -1,15 +1,17 @@
-{% extends "baseTemplate.html" %}
-
-{% block content %}
-    <body>
-        <div class="container">
-            <div class="row justify-content-center">
-                <form method="post" enctype="multipart/form-data" action="{% url 'import_data_from_excel' %}">
-                    {% csrf_token %}
-                    <input type="file" name="excel_file" accept=".xlsx, .xls">
-                    <button type="submit">Import Data</button>
-                </form>                
-            </div>
-        </div>
-    </body>
+{% extends "baseTemplate.html" %} {% block content %}
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <form
+        method="post"
+        enctype="multipart/form-data"
+        action="{% url 'import_data_from_excel' %}"
+      >
+        {% csrf_token %}
+        <input type="file" name="excel_file" accept=".xlsx, .xls" />
+        <button type="submit">Import Data</button>
+      </form>
+    </div>
+  </div>
+</body>
 {% endblock %}

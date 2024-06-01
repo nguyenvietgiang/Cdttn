@@ -1,13 +1,12 @@
-{% extends "baseTemplate.html" %}
-
-{% block content %}
-    <body>
-        <div class="container mt-5" style="margin-top: 100px;">
-            <h1>Chọn một loại từ:</h1>
-            <select class="form-control" onchange="redirectToPath(this.value)">
-                <option value="Tính từ">Tính từ</option>
-                <option value="Danh từ">Danh từ</option>
-            </select>
-        </div>
-    </body>
+{% extends "baseTemplate.html" %} {% block content %}
+<body>
+  <div class="container mt-5" style="margin-top: 100px">
+    <h1>Chọn một loại từ:</h1>
+    <select class="form-control" onchange="redirectToPath(this.value)">
+      <option value="Tính từ">Tính từ</option>
+      <option value="Danh từ">Danh từ</option>
+      <option value="Động từ">Động từ</option>
+    </select>
+  </div>
+</body>
 {% endblock %}
